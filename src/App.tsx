@@ -1,4 +1,4 @@
-import Component from "./starter/04-events";
+import Component from "./starter/07-reducers";
 
 function App() {
   return (
