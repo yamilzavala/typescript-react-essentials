@@ -8,13 +8,13 @@ const setLocalStorage = (tasks: TTask[]): void => {
   localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
-const getFromLocalStorage = () => {
+const getFromLocalStorage = (): TTask[] => {
   const storageTasks = localStorage.getItem('tasks');
   return storageTasks ? JSON.parse(storageTasks) : []
 }
 
 function Component() {
-  const [tasks, setTasks] = useState<TTask[]>(getFromLocalStorage())
+  const [tasks, setTasks] = useState<TTask[]>(() => getFromLocalStorage())
 
   useEffect(() => {
     setLocalStorage(tasks)
